@@ -1,9 +1,5 @@
 # scio task
 
-## Raison d'être:
-
-TODO: your project description
-
 ## Features:
 
 This project comes with number of preconfigured features, including:
