@@ -4,12 +4,9 @@ import com.spotify.scio._
 import com.spotify.scio.sql._
 import com.spotify.scio.jdbc._
 
-import com.twitter.algebird.{Aggregator, Semigroup}
-
-import scala.util.control.NonFatal
 import scala.util.Try
 
-import org.joda.time.{DateTimeZone, Duration, Instant, LocalDate, LocalDateTime, LocalTime}
+import org.joda.time.Instant
 
 object AverageSummary {
   case class Entry(id: String, environmentId: String, channelId: String, sessionId: String, duration: Double, createdAt: Instant)
@@ -32,8 +29,8 @@ object AverageSummary {
   def main(cmdlineArgs: Array[String]): Unit = {
     val (sc, args) = ContextAndArgs(cmdlineArgs)
 
-    val exampleData = "dummy.csv"
-    val input = args.getOrElse("input", exampleData)
+    val dummyData = "dummy.csv"
+    val input = args.getOrElse("input", dummyData)
     val connOptions = getConnectionOptions()
     val averageWriteOptions = getAverageWriteOptions(connOptions)
     val summaryWriteOptions = getSummaryWriteOptions(connOptions)
