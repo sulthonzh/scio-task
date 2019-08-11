@@ -1,0 +1,23 @@
+Data Engineer Task
+1. extract data dari file csv yg disediakan dan masukkan ke database mysql dengan apache beam
+2. buat table baru yg berisi timestamp, environment_id, channel_id, avg_durasi
+3. buat table baru lagi yg berisi timestamp, environment_id, channel_id, summary_durasi
+3. buat data pipeline menggunakan apache beam dengan spesifikasi
+  a. pipeline akan membaca semua data di table awal
+  b. setelah mendapatkan data dan masukkan ke dalam SCollection
+  c. fanout SCollection menjadi dua SCollection
+  d. SCollection pertama grouping data berdasarkan environment_id, channel_id, jam dan rata-rata avg_durasi
+  e. SCollection kedua grouping data berdasarkan environment_id, channel_id, jam dan jumlahkan(summary) avg_durasi
+  f. Simpan hasil pipeline ke table yg telah dibuat sebelumnya
+gunakan bahasa pemrograman scala
+beam: https://beam.apache.org/
+scio: https://spotify.github.io/scio/
+
+
+tabel 1 dan 2
+field timestamp itu diisi apa? 
+
+apakah timestamp ketika simpan 
+apakah timestamp data awal (kayaknya ndak mungkin)
+
+ 
